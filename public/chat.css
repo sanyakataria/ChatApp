@@ -1,0 +1,44 @@
+body{
+    padding: 50px;
+    background-image: linear-gradient(120deg,#6c48b0,#fb9331); 
+  }
+
+#userFormArea{
+    width: 360px;
+    height: 350px;
+    padding: 40px 40px;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%,-50%);
+    background-color: beige;
+}
+
+.bottom-text{
+    margin-top: 10px;
+    text-align: left;
+    font-size: 10px;
+  }
+
+#btn{
+    display: block;
+    width: 100%;
+    height: 50px;
+    border: none;
+    background-image: linear-gradient(#6748b0,#8831fb);
+    background-size: 200%;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    transition: .5s;
+    font-size: 15px;
+}
+
+.login{
+    margin-left:200px;
+}
+
+.msg{
+    height: 35px;
+} 

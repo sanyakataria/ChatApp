@@ -26,79 +26,12 @@ app.use(passport.session())
 
 app.use(express.static(__dirname + '/public'))
 
-//app.use('/', require('./routes/route'))
+app.use('/', require('./routes/route'))
 
 // app.get('/', (req,res) => {
 //     res.render('index');
 // })
 
-app.get('/login', (req,res) => {
-    res.render('login')
-})
-
-app.get('/signup', (req, res) => {
-    res.render('signup')
-})
-
-app.get('/chat', (req, res) => {
-    res.render('chat')
-})
-
-app.post('/login', passport.authenticate('local', {
-    failureRedirect: '/login',
-    successRedirect: '/chat'
-}))
-
-app.post('/signup', (req, res) => {
-    users.create ({
-        username: req.body.username,
-        password: req.body.password,
-        firstname: req.body.firstname,
-        lastname: req.body.lastname,
-        email: req.body.email
-    }) .then((createduser) => {
-        res.redirect('/login')
-        //onlineusers = createduser.username;
-    })
-})
-
-function checkLoggedIn(req, res, next) {
-    if (req.user) {
-        console.log(req.user);
-        console.log("req.user "+req.user.username)
-        return next()
-    }
-    else{
-   res.redirect('/login')
-  }}
-
-//   app.post('/chatmessages',checkLoggedIn,(req,res)=>{
-//     console.log(req.user.username)
-//     if(req.body.task){
-//     chats.create({
-//         username:req.user.username,
-//         message:req.body.message
-//     }).then((message)=>{
-//         chats.findAll({
-//             where:{
-//                 username:req.user.username, 
-//             }
-//         }).then((allmessage)=>{
-//             res.json(allmessage)
-//         })
-//     })
-//     }
-//     else
-//     {
-//         chats.findAll({
-//             where:{
-//                 username:req.user.username, 
-//             }
-//         }).then((allmessage)=>{
-//             res.json(allmessage)
-//         })
-//     }
-// })
 
 io.on('connection', function(socket){
     connections.push(socket);

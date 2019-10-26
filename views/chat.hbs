@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>IO Chat</title>
+    <link rel="stylesheet" href="chat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -18,29 +22,32 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
     <script src="/socket.io/socket.io.js"></script>
-    {{!-- <link rel="stylesheet" href="index.css"> --}}
+
 
 </head>
-<style>
-    body {
-        margin: 10px;
-    }
-</style>
 
 <body>
-    <div class="container">
-        <div id="userFormArea" class="row">
+    <div class="container box">
+        <div id="userFormArea">
             <div class="col-md-12">
                 <form id="userForm">
-                    <div class="form-group">
-                        <input class="form-control" id="username">
-                        <br>
-                        <input id="btn" type="submit" class="btn btn-primary" value="Login">
+                    {{!-- <div class="form-group"> --}}
+                    <b>Name</b>
+                    <input placeholder="Name shown to other users" type="text" class="form-control" id="username">
+                    <div class="bottom-text">
+                        This is not your username. This name will be shown to your chatting mates.
                     </div>
+                    <br>
+                    <b>Status</b>
+                    <input placeholder="Your Status" type="text" class="form-control">
+                    <br>
+                    <input id="btn" type="submit" class="btn btn-primary" value="Start Chat">
+                    {{!-- </div> --}}
                 </form>
             </div>
         </div>
@@ -51,66 +58,26 @@
                     <ul class="list-group" id="users"></ul>
                 </div>
             </div>
-            <div class="col-8">
-                <div class="chat" id="chat"></div>
 
+            <div class="col-8">
+                <div id="chat"></div>
                 <form id="messageForm">
+
                     <div class="form-group">
-                        <textarea placeholder="Enter your message here ..." class="form-control"
-                            id="message"></textarea>
                         <br>
-                        <input type="submit" class="btn btn-primary" value="Send Message">
+                        <i class="fas fa-smile" aria-hidden="true" style="font-size: 18px;"></i>
+                        <input size="75 px" placeholder="Type a message" class="msg" id="message"></input>
+                        <i class='fas fa-microphone' aria-hidden="true" style="font-size: 18px;"></i>
+                        <i class="fa fa-paperclip" aria-hidden="true" style="font-size: 18px;"></i>
+                        <i class="fa fa-camera" aria-hidden="true" style="font-size: 18px;"></i>
+                        <button type="submit" class="btn btn-primary">Send</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 
-    <script>
-        $(function () {
-            $("#messageArea").hide();
-            $("#btn").click(function () {
-                $("#userFormArea").hide();
-                $("#messageArea").show();
-            });
-            var socket = io.connect();
-            var $messageForm = $('#messageForm');
-            var $message = $('#message');
-            var $chat = $('#chat');
-            var $messageArea = $('#messageArea');
-            var $userFormArea = $('#userFormArea');
-            var $userForm = $('#userForm');
-            var $users = $('#users');
-            var $username = $('#username');
-            $messageForm.submit(function (e) {
-                e.preventDefault();
-                console.log('submitted');
-                socket.emit('send message', $message.val());
-                $message.val('');
-            });
-            socket.on('new message', function (data) {
-                $chat.append('<div class="card card-body bg-light>"<strong>'+ data.user + '</strong> : ' + data.msg + '</div>');
-            })
-            $userForm.submit(function (e) {
-                e.preventDefault();
-                console.log('submitted');
-                socket.emit('new user', $username.val(), function (data) {
-                    if (data) {
-                        $userFormArea.hide();
-                        $messageArea.show();
-                    }
-                });
-                $username.val('');
-            });
-            socket.on('get users', function (data) {
-                var html = '';
-                for (i = 0; i < data.length; i++) {
-                    html += '<li class="list-group-item">' + data[i] + '</li>';
-                }
-                $users.html(html);
-            });
-        });
-    </script>
+    <script src="chat.js"></script>
 </body>
 
 </html>
