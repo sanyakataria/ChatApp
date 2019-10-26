@@ -26,8 +26,18 @@ body{
     width: 100%;
     height: 50px;
     border: none;
-    background-image: linear-gradient(#6748b0,#8831fb);
+    background-image: linear-gradient(#4e0aee,#8831fb);
     background-size: 200%;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    transition: .5s;
+    font-size: 15px;
+}
+
+#btn1{
+    background-image: linear-gradient(#4e0aee,#8831fb);
+    border: none;
     color: #fff;
     outline: none;
     cursor: pointer;
@@ -40,5 +50,6 @@ body{
 }
 
 .msg{
+    border-radius: 15px;
     height: 35px;
 } 

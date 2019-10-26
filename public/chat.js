@@ -20,7 +20,7 @@ $(function () {
         $message.val('');
     });
     socket.on('new message', function (data) {
-        $chat.append('<div class="card card-body bg-light">' + '<strong>' + data.user + '</strong> : ' + data.msg + '</div>');
+        $chat.append('<div class="well"><strong>' + data.user + '</strong> : ' + data.msg + '</div>');
     })
     $userForm.submit(function (e) {
         e.preventDefault();
