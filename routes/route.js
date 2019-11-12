@@ -11,6 +11,10 @@ route.get('/signup', (req, res) => {
     res.render('signup')
 })
 
+
+
+
+
 route.get('/chat', (req, res) => {
     res.render('chat')
 })

@@ -8,11 +8,14 @@
     <title>Login</title>
     <link rel="stylesheet" href="login.css">
     <script src="http://code.jquery.com/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     
+
 </head>
 
 <body>
-    
+
     <!-- 
     <div class="container">
         <input type="text" placeholder="username" name="username"> <br>
@@ -34,6 +37,22 @@
         </div>
 
         <input type="submit" class="logbtn" value="Login">
+        {{!-- <div class="textbox">
+            <form action="/login/fb" method="GET">
+                <i class="fab fa-facebook-square"></i>
+                <input type="submit" class="btn" value="Sign in with FB" id="fblogin"></form>
+        </div> --}}
+        <div class="textbox">
+            <form action="/login/google" method="GET">
+                <i class="fab fa-google-plus"></i>
+                <input type="submit" class="btn" value="Sign in with Google"></form>
+        </div>
+                <div class="textbox">
+            <form action="/login/fb" method="GET">
+                <i class="fab fa-facebook-square"></i>
+                <input type="submit" class="btn" value="Sign in with FB" id="fblogin"></form>
+        </div>
+
 
         <div class="bottom-text">
             Don't have account? <a href="http://localhost:9999/signup">Sign up</a>

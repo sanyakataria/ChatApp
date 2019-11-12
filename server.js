@@ -26,11 +26,27 @@ app.use(passport.session())
 
 app.use(express.static(__dirname + '/public'))
 
-app.use('/', require('./routes/route'))
+//google signin
+app.get('/login/google', passport.authenticate('google',{ scope:
+    [ 'email', 'profile' ] }
+    ))
+  
+  app.get('/login/google/callback', passport.authenticate('google', {
+    successRedirect: '/chat',
+    failureRedirect: '/login'
+  }))
 
 // app.get('/', (req,res) => {
 //     res.render('index');
 // })
+
+//facebook signin
+app.get('/login/fb',passport.authenticate('facebook'))
+// app.get('/login/fb',(req,res)=>{console.log('fds')})
+app.get('/login/fb/callback', passport.authenticate('facebook', {
+  successRedirect: '/chat',
+  failureRedirect: '/login'
+}))
 
 
 io.on('connection', function(socket){
@@ -63,7 +79,7 @@ io.on('connection', function(socket){
         io.emit('get users', onlineusers);
     }
 })
-
+app.use('/', require('./routes/route'))
 server.listen(9999, () =>{
     console.log("server running.... on http://localhost:9999/login ");
 });

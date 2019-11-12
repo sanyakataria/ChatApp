@@ -2,7 +2,7 @@ const sequelize = require('sequelize');
 
 const db = new sequelize({
     dialect: 'sqlite',
-    storage: 'chatss.js'
+    storage: 'chatss.db'
 });
 
 const users = db.define('persons', {
@@ -12,11 +12,9 @@ const users = db.define('persons', {
     username: {
         type: sequelize.STRING,
         allowNull: false,
-        unique: true
     },
     password: {
         type: sequelize.STRING,
-        allowNull: false
     }
 });
 
