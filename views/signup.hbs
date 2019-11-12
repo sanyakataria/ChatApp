@@ -7,49 +7,37 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Signup</title>
     <script src="http://code.jquery.com/jquery-3.4.1.js"></script>
-    <link href="signup.css" rel="stylesheet" >
+    <link href="signup.css" rel="stylesheet">
     <link href="login.hbs">
 </head>
 
 <body>
-    <!-- 
-    <div class="container">
-        <input type="text" placeholder="username" name="username"> <br>
-        <input type="password" placeholder="password" name="password"> <br>
-        <button> submit </button>
-    </div> -->
-        <div>
-        <h1 class="h11"><b>Realtime ChatApp </b></h1>
 
+    <div>
+        <h1 class="h11"><b>Realtime ChatApp </b></h1>
     </div>
 
     <form method="POST" action="/signup" class="signup-form">
         <h1>Signup</h1>
 
-        
         <div class="txtb">
             <input type="text" name="firstname" placeholder="Firstname">
-            
         </div>
 
         <div class="txtb">
             <input type="text" name="lastname" placeholder="Lastname">
-            
         </div>
-        
+
         <div class="txtb">
             <input type="email" name="email" placeholder="Email">
-            
         </div>
 
         <div class="txtb">
             <input type="text" name="username" placeholder="Username">
-            
         </div>
 
         <div class="txtb">
             <input type="password" name="password" placeholder="Password">
-            
         </div>
 
         <input type="submit" class="supbtn" value="Sign in">
@@ -61,6 +49,7 @@
     </form>
 
     <script type="text/javascript">
+
         $(".txtb input").on("focus", function () {
             $(this).addClass("focus");
         });

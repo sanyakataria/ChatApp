@@ -10,20 +10,18 @@
     <script src="http://code.jquery.com/jquery-3.4.1.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-
-
 </head>
 
 <body>
 
-  
 
     <div>
         <h1 class="h11"><b>Realtime ChatApp </b></h1>
-
     </div>
+
     <div class="login-form">
         <form method="POST" action="/login">
+
             <h1>Login</h1>
 
             <div class="txtb">
@@ -34,10 +32,10 @@
             <div class="txtb">
                 <i class="fas fa-lock"></i>
                 <input type="password" name="password" placeholder="Password">
-
             </div>
 
             <input type="submit" class="logbtn" value="Login">
+
         </form>
 
         <div class="textbox">
@@ -45,14 +43,12 @@
                 <i class="fab fa-facebook-square" style="font-size: 30px"></i>
                 <input type="submit" class="btn" value="Sign in with FB"></form>
         </div>
+
         <div class="textbox">
             <form action="/login/google" method="GET">
                 <i class="fab fa-google-plus" style="font-size: 30px"></i>
                 <input type="submit" class="btn" value="Sign in with Google"></form>
         </div>
-
-
-
 
         <div class="bottom-text">
             Don't have account? <a href="http://localhost:9999/signup">Sign up</a>
@@ -61,6 +57,7 @@
     </div>
 
     <script type="text/javascript">
+
         $(".txtb input").on("focus", function () {
             $(this).addClass("focus");
         });
@@ -71,7 +68,6 @@
         });
 
     </script>
-
 
 </body>
 

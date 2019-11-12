@@ -30,8 +30,8 @@ const chats = db.define('chats', {
 });
 
 db.sync()
-.then(() => {console.log('Database has been synced !')})
-.catch(() => {console.log('Error creating database :(')})
+    .then(() => { console.log('Database has been synced !') })
+    .catch(() => { console.log('Error creating database :(') })
 
 module.exports = {
     db,
