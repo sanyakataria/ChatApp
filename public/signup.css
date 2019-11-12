@@ -10,12 +10,20 @@
     min-height: 100vh;
     background-image: linear-gradient(120deg,#6c48b0,#fb9331); 
   }
+
+  .h11{
+    text-align: center;
+    color:black; 
+    margin-top:15px;
+    font-size:50px;
+  }
   
   .signup-form{
     width: 360px;
     background: #f1f1f1;
-    height: 670px;
-    padding: 80px 40px;
+    height: 600px;
+    margin-top: 30px;
+    padding: 60px 40px;
     border-radius: 10px;
     position: absolute;
     left: 50%;
@@ -24,8 +32,9 @@
   }
   
   .signup-form h1{
+    font-size: 40px;
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
   }
   
   .txtb{
@@ -45,7 +54,7 @@
     height: 40px;
   }
   
-  .txtb span::before{
+  /* .txtb span::before{
     content: attr(data-placeholder);
     position: absolute;
     top: 50%;
@@ -54,9 +63,9 @@
     transform: translateY(-50%);
     z-index: -1;
     transition: .5s;
-  }
+  } */
   
-  .txtb span::after{
+  /* .txtb span::after{
     content: '';
     position: absolute;
     width: 0%;
@@ -70,7 +79,7 @@
   }
   .focus + span::after{
     width: 100%;
-  }
+  } */
   
   .supbtn{
     display: block;

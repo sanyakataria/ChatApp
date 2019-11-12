@@ -10,55 +10,55 @@
     <script src="http://code.jquery.com/jquery-3.4.1.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-    
+
 
 </head>
 
 <body>
 
-    <!-- 
-    <div class="container">
-        <input type="text" placeholder="username" name="username"> <br>
-        <input type="password" placeholder="password" name="password"> <br>
-        <button> submit </button>
-    </div> -->
+  
 
-    <form method="POST" action="/login" class="login-form">
-        <h1>Login</h1>
+    <div>
+        <h1 class="h11"><b>Realtime ChatApp </b></h1>
 
-        <div class="txtb">
-            <input type="text" name="username">
-            <span data-placeholder="Username"></span>
-        </div>
+    </div>
+    <div class="login-form">
+        <form method="POST" action="/login">
+            <h1>Login</h1>
 
-        <div class="txtb">
-            <input type="password" name="password">
-            <span data-placeholder="Password"></span>
-        </div>
+            <div class="txtb">
+                <i class="fas fa-user"></i>
+                <input type="text" name="username" placeholder="Username">
+            </div>
 
-        <input type="submit" class="logbtn" value="Login">
-        {{!-- <div class="textbox">
+            <div class="txtb">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password" placeholder="Password">
+
+            </div>
+
+            <input type="submit" class="logbtn" value="Login">
+        </form>
+
+        <div class="textbox">
             <form action="/login/fb" method="GET">
-                <i class="fab fa-facebook-square"></i>
-                <input type="submit" class="btn" value="Sign in with FB" id="fblogin"></form>
-        </div> --}}
+                <i class="fab fa-facebook-square" style="font-size: 30px"></i>
+                <input type="submit" class="btn" value="Sign in with FB"></form>
+        </div>
         <div class="textbox">
             <form action="/login/google" method="GET">
-                <i class="fab fa-google-plus"></i>
+                <i class="fab fa-google-plus" style="font-size: 30px"></i>
                 <input type="submit" class="btn" value="Sign in with Google"></form>
         </div>
-                <div class="textbox">
-            <form action="/login/fb" method="GET">
-                <i class="fab fa-facebook-square"></i>
-                <input type="submit" class="btn" value="Sign in with FB" id="fblogin"></form>
-        </div>
+
+
 
 
         <div class="bottom-text">
             Don't have account? <a href="http://localhost:9999/signup">Sign up</a>
         </div>
 
-    </form>
+    </div>
 
     <script type="text/javascript">
         $(".txtb input").on("focus", function () {
